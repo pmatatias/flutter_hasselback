@@ -18,6 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: const Text("Futter Hasselback",
             style: TextStyle(color: Colors.white)),
+            elevation: 4,
       ),
       body: ListView(
         children: <Widget>[
