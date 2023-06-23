@@ -14,7 +14,7 @@ class _OvoViewState extends State<OvoView> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _ctrl = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 400));
+        vsync: this, duration: const Duration(milliseconds: 700));
     _ctrl.repeat(reverse: true);
   }
 
