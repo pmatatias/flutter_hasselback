@@ -6,26 +6,28 @@ class OvoLoaderWidget extends StatelessWidget {
             parent: controller,
             curve: const Interval(0.0, 1.0, curve: Curves.fastOutSlowIn))),
 
-        /// initial value is 5
-        /// means that size will reduced by 5
-        padd = Tween<double>(begin: 5, end: 0).animate(CurvedAnimation(
+        /// initial value is 0
+        /// means that the size will scale up by 5
+        scaleXY = Tween<double>(begin: 0, end: 5).animate(CurvedAnimation(
             parent: controller,
             curve: const Interval(0.0, 0.5, curve: Curves.fastOutSlowIn))),
         scaleX = Tween<double>(begin: 15, end: 25).animate(CurvedAnimation(
             parent: controller,
-            curve: const Interval(0.3, 0.6, curve: Curves.fastOutSlowIn))),
+            curve: const Interval(0.25, 0.4, curve: Curves.fastOutSlowIn))),
         scaleY = Tween<double>(begin: 15, end: 25).animate(CurvedAnimation(
             parent: controller,
             curve: const Interval(0.4, 1.0, curve: Curves.fastOutSlowIn))),
-        padd2 = Tween<double>(begin: 5, end: 0).animate(CurvedAnimation(
+        scaleXY2 = Tween<double>(begin: 0, end: 1).animate(CurvedAnimation(
             parent: controller,
             curve: const Interval(0.9, 1.0, curve: Curves.fastOutSlowIn)));
 
   final AnimationController controller;
+
+  /// animate the translation left and rigth circle
   final Animation<double> transl;
 
-  /// animate padding
-  final Animation<double> padd;
+  /// animate size 
+  final Animation<double> scaleXY;
 
   /// the scale  x and y is not start at the same time
   /// we can see the shape is oval in the middle.
@@ -36,9 +38,8 @@ class OvoLoaderWidget extends StatelessWidget {
   final Animation<double> scaleY;
 
   /// in the end, the center circle size is bigger
-  /// use padding to limit the size
-  /// and then reduce the padding until zero at the end of animation
-  final Animation<double> padd2;
+  /// we need to add radius x and y 
+  final Animation<double> scaleXY2;
 
   @override
   Widget build(BuildContext context) {
@@ -60,17 +61,14 @@ class OvoLoaderWidget extends StatelessWidget {
               ),
 
               /// build center circle
-              Padding(
-                padding: EdgeInsets.all(padd2.value),
-                child: Container(
-                  padding: EdgeInsets.all(padd.value),
-                  // scale x ==>> increse width
-                  width: scaleX.value,
-                  // scale y ==>> incere the height
-                  height: scaleY.value,
-                  decoration: const ShapeDecoration(
-                      shape: OvalBorder(), color: Colors.indigo),
-                ),
+              Container(
+                // padding: EdgeInsets.all(padd.value),
+                // scale x ==>> increse width
+                width: scaleX.value + scaleXY.value + scaleXY2.value,
+                // scale y ==>> incere the height
+                height: scaleY.value + scaleXY.value + scaleXY2.value,
+                decoration: const ShapeDecoration(
+                    shape: OvalBorder(), color: Colors.indigo),
               ),
 
               /// right circler
