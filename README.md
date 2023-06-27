@@ -1,16 +1,7 @@
-# flutter_hasselback
+# Flutter Hasselback
 
-A new Flutter project.
+### Philosophy 
+The name Hasselback comes from the technique of cutting a fruit or vegetable into thin slices crosswise. In this repository contains flutter code from Slicing UI. Neither a specific image nor design. Each topic has an explanation in media articles. Some of them are also available videos.
 
-## Getting Started
+### 
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
