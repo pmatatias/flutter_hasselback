@@ -1,3 +1,11 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "workbench.sideBar.location": "left",
+    "debug.toolBarLocation": "commandCenter",
+    "dart.previewFlutterUiGuides": true,
+    "dart.previewFlutterUiGuidesCustomTracking": true,
+    "dart.flutterOutline": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit"
+    },
 }
