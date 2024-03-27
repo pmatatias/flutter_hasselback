@@ -17,8 +17,13 @@ class _WawterViewState extends State<WawterView>
     super.initState();
     controller =
         AnimationController(vsync: this, duration: const Duration(seconds: 2));
-
     controller.repeat();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override

@@ -19,6 +19,12 @@ class _OvoViewState extends State<OvoView> with TickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
@@ -27,7 +33,7 @@ class _OvoViewState extends State<OvoView> with TickerProviderStateMixin {
             height: 120,
             width: 120,
             alignment: Alignment.center,
-            decoration:  BoxDecoration(
+            decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               color: Colors.white,
             ),
